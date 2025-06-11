@@ -37,7 +37,7 @@ A Windows system tray application that reads a configuration file (`AppSettings.
 ## Installation
 
 ### Option 1: Download Release (Recommended)
-1. Go to the [Releases](https://github.com/yourusername/ScriptHub/releases) page on GitHub.
+1. Go to the [Releases](https://github.com/Le0nyx/ScriptHub/releases) page on GitHub.
 2. Download the latest release archive (e.g., `HubCppApproach-v1.0.zip`).
 3. Extract the archive to your desired location (e.g., `C:\Tools\ScriptHub\`).
 4. The extracted folder should contain:
