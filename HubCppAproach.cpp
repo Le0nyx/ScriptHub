@@ -7,12 +7,16 @@ g++ HubCppAproach.cpp -municode -std=c++17 -mwindows -o HubCppAproach.exe
 
 #include <windows.h>
 #include <shellapi.h>
-#include <strsafe.h>
 #include <map>
 #include <string>
 #include <algorithm>
 #include <fstream>
 #include <regex>
+
+// Define ARRAYSIZE macro if not available
+#ifndef ARRAYSIZE
+#define ARRAYSIZE(a) (sizeof(a)/sizeof(a[0]))
+#endif
 
 // Function declarations
 std::map<std::string,std::string> readScripts(const std::string& filename);
@@ -28,15 +32,16 @@ void ShowContextMenu(HWND hWnd, POINT pt);
 #define ID_MENU_SCRIPT_BASE    7000
 
 // Win32 "lParam" values for mouse events on a tray icon:
-#define WM_LBUTTONUP   0x0202
-#define WM_RBUTTONUP   0x0205
+// Note: These are already defined in winuser.h, commenting out to avoid redefinition warnings
+// #define WM_LBUTTONUP   0x0202
+// #define WM_RBUTTONUP   0x0205
 
 // Global Variables
 HINSTANCE      g_hInst       = nullptr;
 NOTIFYICONDATA g_nid         = {};    // Structure that describes our tray icon
 HWND           g_hWnd        = nullptr; // Hidden window that receives tray‐icon messages
 
-int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow) {
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
     g_hInst = hInstance;
 
     //hiding terminal window
@@ -94,7 +99,7 @@ int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmd
 
     // Use custom icon if loaded, otherwise use default application icon
     g_nid.hIcon = hCustomIcon ? hCustomIcon : LoadIcon(nullptr, IDI_APPLICATION);
-    StringCchCopy(g_nid.szTip, ARRAYSIZE(g_nid.szTip), TEXT("ScriptsHub"));
+    lstrcpy(g_nid.szTip, TEXT("ScriptsHub")); // Use Windows API function for string copy
 
     // 4) Add the icon to the system tray
     if (!Shell_NotifyIcon(NIM_ADD, &g_nid)) {
