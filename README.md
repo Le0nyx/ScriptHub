@@ -151,7 +151,5 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 - Utilizes Win32 API for tray icon and menu management.
 - Example scripts provided in `scripts/` folder.
 - Designed for easy deployment and auto-start functionality.
-<<<<<<< HEAD
 
-=======
->>>>>>> e30fb6112d5030048bec6897be8848b184ee767d
+
