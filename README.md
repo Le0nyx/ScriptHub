@@ -2,7 +2,7 @@
 
 A Windows system tray application that reads a configuration file (`AppSettings.conf`) defining scripts, displays them in a context menu, and allows the user to launch them directly from the tray icon.
 
-<img src="./assets/systemtray.png" alt="App in Systemtray Picture" width="150"/>
+<img src="./assets/systemtray.png" alt="App in Systemtray Picture" width="250"/>
 
 ## Introduction
 `HubCppApproach` is a lightweight Windows application written in C++ using the Win32 API. It reads script definitions from `AppSettings.conf` and displays them in a tray icon context menu. Selecting an item will launch the corresponding executable or command. This allows quick access to frequently used scripts or tools directly from the Windows system tray.
