@@ -2,20 +2,7 @@
 
 A Windows system tray application that reads a configuration file (`AppSettings.conf`) defining scripts, displays them in a context menu, and allows the user to launch them directly from the tray icon.
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Project Structure](#project-structure)
-- [Configuration](#configuration)
-- [Compilation and Build](#compilation-and-build)
-- [Auto-Start Setup](#auto-start-setup)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+<img src="./assets/systemtray.png" alt="App in Systemtray Picture" width="500"/>
 
 ## Introduction
 `HubCppApproach` is a lightweight Windows application written in C++ using the Win32 API. It reads script definitions from `AppSettings.conf` and displays them in a tray icon context menu. Selecting an item will launch the corresponding executable or command. This allows quick access to frequently used scripts or tools directly from the Windows system tray.
@@ -81,6 +68,10 @@ scripts {
     "3 Script three": "yo"                # Can be any command or non-existent; behavior may vary
 }
 ```
+
+<img src="./assets/apsettings.png" alt="Picture of appsettings" width="600"/>
+
+
 - The file uses a simple key-value format: `"Display Name": "Path or command"`.
 - Paths should use double backslashes (`\\`) in Windows or single forward slashes (`/`) when appropriate.
 - Modify/add entries as needed. The application reloads the config on launch; restart the application after editing the file.
@@ -152,16 +143,6 @@ Use Windows Task Scheduler to create a task that runs at startup with more advan
 - Test script launching by selecting menu items and ensuring they execute properly.
 - Test auto-start functionality by restarting Windows and confirming the tray icon appears.
 
-## Contributing
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/your-feature`.
-3. Make changes; follow existing coding style (Win32 API conventions, C++17 patterns).
-4. Test changes thoroughly on Windows.
-5. Commit with clear messages and push to your fork.
-6. Open a pull request describing your changes.
-7. Ensure any new dependencies or build instructions are documented in this README.
-
 ## License
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
@@ -170,3 +151,4 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 - Utilizes Win32 API for tray icon and menu management.
 - Example scripts provided in `scripts/` folder.
 - Designed for easy deployment and auto-start functionality.
+
