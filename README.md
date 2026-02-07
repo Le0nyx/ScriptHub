@@ -69,7 +69,7 @@ scripts {
 }
 ```
 
-<img src="./assets/apsettings.png" alt="Picture of appsettings" width="200"/>
+<img src="./assets/appsettings.png" alt="Picture of appsettings" width="400"/>
 
 
 - The file uses a simple key-value format: `"Display Name": "Path or command"`.
